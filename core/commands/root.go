@@ -5,13 +5,12 @@ import (
 	"strings"
 
 	oldcmds "github.com/ipfs/go-ipfs/commands"
-	lgc "github.com/ipfs/go-ipfs/commands/legacy"
-	aaa "github.com/ipfs/go-ipfs/core/commands/aaa"
 	dag "github.com/ipfs/go-ipfs/core/commands/dag"
 	e "github.com/ipfs/go-ipfs/core/commands/e"
 	ocmd "github.com/ipfs/go-ipfs/core/commands/object"
 	unixfs "github.com/ipfs/go-ipfs/core/commands/unixfs"
 
+	lgc "github.com/ipfs/go-ipfs/commands/legacy"
 	logging "gx/ipfs/QmRb5jh8z2E8hMGN2tkvs1yHynUanqnZ3UeKwgN1i9P1F8/go-log"
 	"gx/ipfs/QmTjNRVt2fvaRFu93keEC7z5M1GS1iH6qZ9227htQioTUY/go-ipfs-cmds"
 	"gx/ipfs/QmceUdzxkimdYsgtX733uNgzf1DLHyBKN6ehGSp85ayppM/go-ipfs-cmdkit"
@@ -32,7 +31,6 @@ BASIC COMMANDS
   init          Initialize ipfs local configuration
   add <path>    Add a file to IPFS
   cat <ref>     Show IPFS object data
-  check <path>	Check file's existence
   get <ref>     Download IPFS objects
   ls <ref>      List links from an object
   refs <ref>    List hashes of links from an object
@@ -109,7 +107,6 @@ var rootSubcommands = map[string]*cmds.Command{
 	"bitswap":   BitswapCmd,
 	"block":     BlockCmd,
 	"cat":       CatCmd,
-	"check":     aaa.CheckCmd,
 	"commands":  CommandsDaemonCmd,
 	"files":     FilesCmd,
 	"filestore": FileStoreCmd,
